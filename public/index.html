@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>OpenBoard Clone</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+        <canvas class="myCanvas"></canvas>
+		<div class="options-cont">
+			<i class="fas fa-bars"></i>
+		</div>
+		<div class="tools-cont scale-tools">
+			<i class="fas fa-pencil-alt tool" style="margin-left: 10px"></i>
+			<i class="fas fa-eraser"></i>
+			<i class="fas fa-download tool"></i>
+			<i class="fas fa-upload tool"></i>
+			<i class="fas fa-sticky-note"></i>
+			<i class="fas fa-undo tool"></i>
+			<i class="fas fa-redo tool" style="margin-right: 10px"></i>
+		</div>
+		<div class="pencil-cont">
+			<div class="pencil-width-range">
+				<input type="range" min="2" max="10" value="3" class="pencilWidth"/>
+			</div>
+			<div class="pencil-color">
+				<div class="black color"></div>
+				<div class="blue color"></div>
+				<div class="red color"></div>
+			</div>
+		</div>
+		<div class="eraser-width-range">
+			<input type="range" min="2" max="10" value="3" class="eraserWidth"/>
+		</div>
+		<script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+		<script>
+			let socket = io.connect('http://localhost:5000');
+		</script>
+		<script src="util.js"></script>
+		<script src="./tools.js"></script>
+        <script src="./canvas.js"></script>
+	</body>
+</html>
